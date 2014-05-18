@@ -18,14 +18,14 @@ if __name__ == "__main__":
     
     end = int(sys.argv[1])
     numbers = range(1, end)
-    factors = []
+    terms = []
 
     for number in numbers:
         if (number % 3 == 0) or (number % 5 == 0):
-            factors.append(number)
+            terms.append(number)
 
-    print "Factors:"
-    print factors  
-    solution = reduce(lambda x, y: x*y, factors)      
+    print "Terms:"
+    print terms  
+    solution = reduce(lambda x, y: x+y, terms)      
     print "Solution:", solution
 
