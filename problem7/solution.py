@@ -2,39 +2,19 @@
 # we can see that the 6th prime is 13.
 # What is the 10 001st prime number?
 # Solution: 104743
-import sys
+from common.util import is_prime, generate_primes
 
 def print_usage():
-    print "usage: python %s <number>" % sys.argv[0]
+    print "arguments:  <number>"
 
-def assert_correct_input():
-    if len(sys.argv) != 2:
+def assert_correct_input(args):
+    if len(args) != 1:
         print_usage()
         quit(1)
 
-def is_prime(number):
-    """ Checks whether a number is a prime number """
-    if number == 1 or number == 2:
-        return True
-    for i in xrange(2, number/2 + 1):
-        if number % i == 0:
-            return False
-    return True
-
-def generate_primes():
-    """ 
-    Generator for prime numbers.
-    Not used as current solution is more performant.
-    """
-    i = 1
-    while True:
-        if is_prime(i):
-            yield i
-        i += 1
-
-if  __name__ == "__main__":
-    assert_correct_input()
-    target = int(sys.argv[1]) + 1 # we don't count 1 as a prime in this problem
+def run(args):
+    assert_correct_input(args)
+    target = int(args[0]) + 1 # we don't count 1 as a prime in this problem
 
     num = 1
     one_percent = target / 100
@@ -51,8 +31,4 @@ if  __name__ == "__main__":
 
     print "Solution:", solution
 
-
-
- 
-    
  
