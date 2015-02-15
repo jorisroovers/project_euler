@@ -23,7 +23,6 @@ python solution.py
 Not working
 -----------
 The following solutions are known to be incorrect:
-- problem5
 - problem8
 
 Incomplete

@@ -13,6 +13,13 @@ def assert_correct_input():
         print_usage()
         quit(1)
 
+# Returns the dividers in a range [1...range_end] that are not dividers
+# of a different number within that same range.
+# For example:
+# [6, 5, 4] is return for input 6, because [1,2,3] are already covered.
+# 1 -> everything is divisable by 1, 
+# 2 -> 4 and 6 are divisble by 2
+# 3 -> 6 is divisble by 3
 def range_dividers(range_end):
     result = []
     for i in xrange(range_end, 2, -1):
@@ -30,17 +37,24 @@ def divisible_by_range(num, r):
             return False
 
     return True
-
-if __name__ == "__main__":
-    assert_correct_input()
-
-    end = int(sys.argv[1])
-    num = 1
-    r = range_dividers(end)
+    
+def find_solution(n):
+    num = n
+    r = range_dividers(n)
+    print r
     while True:
         if divisible_by_range(num, r):
             break
-        num += 1       
+        num += n
+        
+    return num
+
+if __name__ == "__main__":
+    assert_correct_input()
+    n = int(sys.argv[1])
+    for i in xrange(1, n+1):
+        solution = find_solution(i)
+        print "N=%d: %d" % (i, solution)
    
-    print "Solution:", num 
+    print "Solution:", solution 
 
