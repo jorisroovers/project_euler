@@ -30,5 +30,4 @@ Incomplete
 The following solutions are still work in progress
 - problem11
 - problem12
-- problem15
 
