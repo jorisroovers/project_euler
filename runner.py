@@ -12,21 +12,22 @@ def assert_usage():
 
 if __name__ == "__main__":
     assert_usage()
-    
+
     # Dynamically import the selected problem package
     problem_nr = sys.argv[1]
     problem_package_name =  "problem" + problem_nr
     if not os.path.exists(problem_package_name):
         quit("No such package: '%s'" % problem_package_name)
-    
+
     module_name = "%s.solution" % problem_package_name
     function_name = "run"
     problem_module = __import__(module_name, fromlist=[function_name])
     if not hasattr(problem_module, function_name):
-       quit("The module '%s.%s' has no function %s" % (problem_package_name, 
-                                                       module_name, 
+       quit("The module '%s.%s' has no function %s" % (problem_package_name,
+                                                       module_name,
                                                        function_name))
 
     func = getattr(problem_module, function_name)
-    func(sys.argv[2:])
+    args = [sys.argv[0]] + sys.argv[2:]
+    func(args)
 

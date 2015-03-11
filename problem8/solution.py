@@ -1,23 +1,35 @@
+# The four adjacent digits in the 1000-digit number that have the greatest 
+# product are 9 x 9 x 8 x 9 = 5832. Find the thirteen adjacent digits in the 
+# 1000-digit number (see input.txt) that have the greatest product. 
+# What is the value of this product?
+import sys
 
-
-if __name__ == "__main__":
-  
+def run(args):
     with open('input.txt', 'r') as f:
         contents = f.readlines()
         # input file as single str
         number_str = "".join(contents).replace("\n", "")
-        
-        number_str = "1234567890"
+        print "Number"
+        print number_str
+        print "-"*50
         i = 0
-        window_size = 5
+        window_size = int(args[1])
         last_window_start_index = len(number_str) - window_size
         largest_product = 0
+        largest_window = ""
         while i <= last_window_start_index:
-            window = number_str[i:i+5]
+            window = number_str[i:i+window_size]
+            #print "window: %s", window
             product = reduce(lambda x, y: int(x) * int(y), window)
             if product > largest_product:
                 largest_product = product
+                largest_window = window
             i += 1
-        
-        print "Solution: ", largest_product
+
+        window_product_str = "x".join([ch for ch in largest_window])
+        print "Solution: %i (%s)" % (largest_product, window_product_str)
+
+
+if __name__ == "__main__":
+    run(sys.argv)
 

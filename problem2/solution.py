@@ -7,11 +7,11 @@
 
 import sys
 
-def print_usage():
-    print "usage: python %s <range-end>" % sys.argv[0]
+def print_usage(args):
+    print "usage: python %s <range-end>" %  args[0]
 
-def assert_correct_input():
-    if len(sys.argv) != 2:
+def assert_correct_input(args):
+    if len(args) != 2:
         print_usage()
         quit(1)
 
@@ -25,10 +25,11 @@ def xfib():
         f2 = f1 + f2
         f1 = tmp
 
-if __name__ == "__main__":
-    assert_correct_input()
-    end = int(sys.argv[1])
-    
+def run(args):
+
+    assert_correct_input(args)
+    end = int(args[1])
+
     # find all fibonacci numbers that we need
     even_fibs = []
     for f in xfib():
@@ -36,7 +37,7 @@ if __name__ == "__main__":
             break
         if (f % 2 == 0):
             even_fibs.append(f)
-    
+
     print "Even Fibonacci numbers, smaller then %d:"
     print even_fibs
 
@@ -45,5 +46,7 @@ if __name__ == "__main__":
     solution = reduce(lambda x, y: x+y, even_fibs)
 
     print "Solution: ", solution
-    
 
+
+if __name__ == "__main__":
+    run(sys.argv)

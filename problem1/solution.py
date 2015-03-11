@@ -5,18 +5,19 @@
 
 import sys
 
-def print_usage():
-    print "usage: python %s <range-end>" % sys.argv[0]
+def print_usage(args):
+    print "usage: python solution.py <range-end>"
 
-def assert_correct_input():
-    if len(sys.argv) != 2:
-        print_usage()
+def assert_correct_input(args):
+    if len(args) != 2:
+        print_usage(args)
         quit(1)
 
-if __name__ == "__main__":
-    assert_correct_input()
-    
-    end = int(sys.argv[1])
+
+def run(args):
+    assert_correct_input(args)
+
+    end = int(args[1])
     numbers = range(1, end)
     terms = []
 
@@ -25,7 +26,9 @@ if __name__ == "__main__":
             terms.append(number)
 
     print "Terms:"
-    print terms  
-    solution = reduce(lambda x, y: x+y, terms)      
+    print terms
+    solution = reduce(lambda x, y: x+y, terms)
     print "Solution:", solution
 
+if __name__ == "__main__":
+    run(sys.argv)

@@ -3,11 +3,11 @@
 # Solution: 6857
 import sys
 
-def print_usage():
-    print "usage: python %s <number>" % sys.argv[0]
+def print_usage(args):
+    print "usage: python %s <number>" % args[0]
 
-def assert_correct_input():
-    if len(sys.argv) != 2:
+def assert_correct_input(args):
+    if len(args) != 2:
         print_usage()
         quit(1)
 
@@ -31,25 +31,15 @@ def generate_primes():
             yield i
         i += 1
 
+
 def is_factor(factor, number):
     return number % factor == 0
-    #div = float(factor) / float(number)
-    #print (div - int(div))
 
-if  __name__ == "__main__":
-    assert_correct_input()
-    number = int(sys.argv[1])
+def run(args):
+    assert_correct_input(args)
+    number = int(args[1])
     largest_prime_factor = 0
-    #for i in xrange(number/2 + 1, 1, -1):
-    #    print "number ", i
-    #    if is_factor(i, number):
-    #        print "Checking factor", i
-    #        if is_prime(i):
-    #            largest_prime_factor = i
-    #            break
-    
 
-    #print "Solution:", largest_prime_facto
     factor = 0
     for prime in generate_primes():
         print prime, factor
@@ -58,13 +48,10 @@ if  __name__ == "__main__":
             print "prime factor=", prime, factor
         factor = number / prime
         if prime >= factor:
-            break            
-      
-    print "Solution:", largest_prime_factor
- #     if prime > number/2:
-   #         break
-   #     if is_factor(prime, number):
-   #         print prime
- 
+            break
 
- 
+    print "Solution:", largest_prime_factor
+
+
+if  __name__ == "__main__":
+    run(sys.argv)

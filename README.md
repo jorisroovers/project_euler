@@ -31,3 +31,8 @@ The following solutions are still work in progress
 - problem11
 - problem12
 
+Solutions
+----------
+Problem Nr | Invocation for solution | Solution
+1          | python runner.py 1      | 233168
+3          | python runner.py 3      | 6857
