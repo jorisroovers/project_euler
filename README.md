@@ -33,6 +33,10 @@ The following solutions are still work in progress
 
 Solutions
 ----------
-Problem Nr | Invocation for solution | Solution
-1          | python runner.py 1      | 233168
-3          | python runner.py 3      | 6857
+Problem Nr | Invocation for solution       | Solution
+-----------|-------------------------------|-----------
+1          | `python runner.py 1`          | 233168
+2          | `python runner.py 2 4000000`  | 4613732
+3          | `python runner.py 3`          | 6857
+4          | `python problem4/solution.py` | 906609
+

@@ -5,7 +5,7 @@
 import sys
 
 def print_usage():
-    print "usage: python %s <range-end>" % sys.argv[0]
+    print("usage: python %s <range-end>" % sys.argv[0])
 
 def assert_correct_input():
     if len(sys.argv) != 2:
@@ -18,7 +18,7 @@ def is_palindrome(num):
     # letter in second half of the string and check if they are the same.
     num_str = str(num)
     num_str_len = len(num_str)
-    for left_i in xrange(0, num_str_len/2):
+    for left_i in range(0, int(num_str_len/2)):
         right_i = (num_str_len - 1) - left_i
         # print left_i, "==", right_i
         if num_str[left_i] != num_str[right_i]:
@@ -39,5 +39,5 @@ if __name__ == "__main__":
             if is_palindrome(product) and product > max_palindrome:
                 max_palindrome = product
     
-    print "Solution: ", max_palindrome
+    print("Solution: ", max_palindrome)
      

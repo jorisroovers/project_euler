@@ -4,9 +4,10 @@
 # Find the sum of all the multiples of 3 or 5 below 1000.
 
 import sys
+from functools import reduce
 
 def print_usage(args):
-    print "usage: python solution.py <range-end>"
+    print("usage: python solution.py <range-end>")
 
 def assert_correct_input(args):
     if len(args) != 2:
@@ -25,10 +26,10 @@ def run(args):
         if (number % 3 == 0) or (number % 5 == 0):
             terms.append(number)
 
-    print "Terms:"
-    print terms
+    print("Terms:")
+    print(terms)
     solution = reduce(lambda x, y: x+y, terms)
-    print "Solution:", solution
+    print("Solution:", solution)
 
 if __name__ == "__main__":
     run(sys.argv)

@@ -6,9 +6,10 @@
 # four million, find the sum of the even-valued terms.
 
 import sys
+from functools import reduce
 
 def print_usage(args):
-    print "usage: python %s <range-end>" %  args[0]
+    print("usage: python %s <range-end>" %  args[0])
 
 def assert_correct_input(args):
     if len(args) != 2:
@@ -38,14 +39,14 @@ def run(args):
         if (f % 2 == 0):
             even_fibs.append(f)
 
-    print "Even Fibonacci numbers, smaller then %d:"
-    print even_fibs
+    print("Even Fibonacci numbers, smaller then %d:")
+    print(even_fibs)
 
     # obviously, we can do this more efficient by adding them up in the loop
     # but that's not the point here :-)
     solution = reduce(lambda x, y: x+y, even_fibs)
 
-    print "Solution: ", solution
+    print("Solution: ", solution)
 
 
 if __name__ == "__main__":

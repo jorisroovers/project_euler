@@ -3,7 +3,7 @@ import os
 import problem1
 
 def print_usage():
-    print "%s <problem nr> <param>*" % sys.argv[0]
+    print("%s <problem nr> <param>*" % sys.argv[0])
 
 def assert_usage():
     if len(sys.argv) < 2:

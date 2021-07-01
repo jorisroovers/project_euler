@@ -4,7 +4,7 @@
 import sys
 
 def print_usage(args):
-    print "usage: python %s <number>" % args[0]
+    print("usage: python %s <number>" % args[0])
 
 def assert_correct_input(args):
     if len(args) != 2:
@@ -15,7 +15,7 @@ def is_prime(number):
     """ Checks whether a number is a prime number """
     if number == 1 or number == 2:
         return True
-    for i in xrange(2, number/2 + 1):
+    for i in range(2, int(number/2) + 1):
         if number % i == 0:
             return False
     return True
@@ -42,15 +42,15 @@ def run(args):
 
     factor = 0
     for prime in generate_primes():
-        print prime, factor
+        print(prime, factor)
         if is_factor(prime, number):
             largest_prime_factor = prime
-            print "prime factor=", prime, factor
+            print("prime factor=", prime, factor)
         factor = number / prime
         if prime >= factor:
             break
 
-    print "Solution:", largest_prime_factor
+    print("Solution:", largest_prime_factor)
 
 
 if  __name__ == "__main__":
