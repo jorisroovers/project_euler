@@ -28,7 +28,6 @@ The following solutions are known to be incorrect:
 Incomplete
 ----------
 The following solutions are still work in progress
-- problem11
 - problem12
 
 Solutions
@@ -39,5 +38,9 @@ Problem Nr | Invocation for solution                   | Solution
 2          | `python runner.py 2 4000000`              | 4613732
 3          | `python runner.py 3`                      | 6857
 4          | `python problem4/solution.py`             | 906609
+5          | `python problem5/solution.py 20`          | 232792560
+6          | `python problem6/solution.py`             | 25164150 
+10         | `python runner.py 10 2000000`             | 142913828922
 11         | `python runner.py 11 problem11/input.txt` | 70600674
+20         | `python problem20/solution.py 100`        | 648
 

@@ -8,10 +8,10 @@ if __name__ == "__main__":
 
     n = 100
     sum_squares = 0
-    for i in xrange(1, n +1):
+    for i in range(1, n +1):
         sum_squares += i**2
 
-    print "Sum Squares =", sum_squares
+    print("Sum Squares =", sum_squares)
     squared_sum = sum_range_n(n) ** 2
-    print "Squared Sum = ", squared_sum
-    print "Solution =", (squared_sum - sum_squares)        
+    print("Squared Sum = ", squared_sum)
+    print("Solution =", (squared_sum - sum_squares))

@@ -6,20 +6,20 @@
 import sys
 
 n = int(sys.argv[1])
-print "N=%d" % n
+print("N=%d" % n)
 
 factorial = 1
 
-for i in xrange(1, n+1):
+for i in range(1, n+1):
     factorial = factorial * i
-    print "%d!=%d" % (i, factorial)
+    print("%d!=%d" % (i, factorial))
     
-print "factorial(%d)=%d" % (n, factorial)
+print("factorial(%d)=%d" % (n, factorial))
 
 sum = 0
 for ch in str(factorial):
     sum += int(ch)
     
-print "digit sum of '%d'= %d" % (factorial, sum)
+print("digit sum of '%d'= %d" % (factorial, sum))
 
 
