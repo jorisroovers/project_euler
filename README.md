@@ -25,11 +25,6 @@ Not working
 The following solutions are known to be incorrect:
 - problem8
 
-Incomplete
-----------
-The following solutions are still work in progress
-- problem12
-
 Solutions
 ----------
 Problem Nr | Invocation for solution                   | Solution
@@ -42,5 +37,6 @@ Problem Nr | Invocation for solution                   | Solution
 6          | `python problem6/solution.py`             | 25164150 
 10         | `python runner.py 10 2000000`             | 142913828922
 11         | `python runner.py 11 problem11/input.txt` | 70600674
+12         | `python runner.py 12`                     | 76576500
 20         | `python problem20/solution.py 100`        | 648
 
