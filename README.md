@@ -22,6 +22,7 @@ python solution.py
 # Not working
 The following solutions are known to be incorrect:
 - problem8
+- problem14 (started)
 
 # Solutions
 Problem Nr | Invocation for solution                   | Solution
@@ -37,5 +38,6 @@ Problem Nr | Invocation for solution                   | Solution
 10         | `python runner.py 10 2000000`             | 142913828922
 11         | `python runner.py 11 problem11/input.txt` | 104743
 12         | `python runner.py 12`                     | 76576500
+14         | `python runner.py 14`                     | Not Finished
 20         | `python problem20/solution.py 100`        | 648
 
