@@ -1,5 +1,18 @@
+# Problem 14: Longest Collatz sequence
+# 
+# The following iterative sequence is defined for the set of positive integers:
 
-from copy import deepcopy
+# n → n/2 (n is even)
+# n → 3n + 1 (n is odd)
+
+# Using the rule above and starting with 13, we generate the following sequence:
+
+# 13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1
+# It can be seen that this sequence (starting at 13 and finishing at 1) contains 10 terms. Although it has not been proved yet (Collatz Problem), it is thought that all starting numbers finish at 1.
+
+# Which starting number, under one million, produces the longest chain?
+
+# NOTE: Once the chain starts the terms are allowed to go above one million.
 
 def next_collatz(n):
     if n % 2 == 0:
@@ -13,131 +26,31 @@ def debug(*msg):
     if DEBUG:
         print(*msg)
 
-def run(args):
-    # collatz_sequence = []
-    # x = 13
-    # while x != 1:
-    #     collatz_sequence.append(x)
-    #     x = next_collatz(x)
-    
-    # collatz_sequence += [1]
-    # print(collatz_sequence)
-    # -----------
+
+def run(n):
+    sequences = {}
+    for i in range(2, int(1e6)):
+        if i % 1e4 ==0:
+            print(i)
+        n = i
+        sequences[i] = []
+        counter = 0
+        while n != 1 or counter == 1000:
+            sequences[i].append(n)
+            n = next_collatz(n)
+            counter += 1
+        sequences[i].append(1)
 
 
-
-    sequences = [[1]]
-    current_level_sequences = [[1]]
-    next_level_sequences = []
-
-    # current_number = 1
-    # candidates=set([1])
-    # while current_number < 13:
-    #     current_number = sorted(candidates)[0]
-    #     candidates.remove(current_number)
-    #     # print(next_candidate)
-    #     candidates.add(2*current_number)
-    #     uneven_reverse = (current_number - 1) / 3
-    #     if uneven_reverse % 3 == 0:
-    #         candidates.add(uneven_reverse)
-
-    #     print(x)
-    #     x+=1
-    start_number_lengths = {}
-    current_max_number = 0
-    
-    try:
-        while current_max_number < 1e6:
-            print("current max", current_max_number)
-            for sequence in current_level_sequences:
-                # even branch
-                next_number1 = sequence[-1]*2
-                if next_number1 < 1e6:
-                    current_max_number = max(current_max_number, next_number1)
-                sequence1 = sequence + [next_number1]
-                next_level_sequences.append(sequence1)
-                sequences.append(sequence1)
-                start_number_lengths[sequence1[-1]] = max(start_number_lengths.get(sequence1[-1],0), len(sequence1))
-
-                # uneven branch
-                next_number2 = (sequence[-1] - 1) / 3
-                if (int(next_number2) == next_number2) and next_number2 not in [0,1] :
-                    if next_number2 < 1e6:
-                        current_max_number = max(current_max_number, next_number2)
-
-                    sequence2 = sequence + [int(next_number2)]
-                    next_level_sequences.append(sequence2)
-                    sequences.append(sequence2)
-                    start_number_lengths[sequence2[-1]] = max(start_number_lengths.get(sequence2[-1],0), len(sequence2))
-                
-            current_level_sequences = deepcopy(next_level_sequences)
-            next_level_sequences = []
-    except KeyboardInterrupt:
-        print("stopped")
+        if counter == 1000:
+            sequences[i] = []
 
 
-    # except StopIteration:
-    for sequence in sequences:
-        print(sequence)
-    
-    print("-------")
-    print(start_number_lengths)
-    longest_length = 0
-    start_number_longest = -1
-    for (start_number, length) in start_number_lengths.items():
-        if length > longest_length:
-            longest_length = length
-            start_number_longest = start_number
+    max_len = 0
+    longest_i = 0
+    for (i, sequence) in sequences.items():
+        if len(sequence) > max_len:
+            max_len = len(sequence)
+            longest_i = i
 
-
-
-    print(start_number_longest, longest_length)
-    print("CURRENT MAX", current_max_number)
-
-
-
-
-
-
-
-
-
-# Collatz Sequence Generator
-
-#  try:
-#         while True:
-#             for sequence in current_level_sequences:
-#                 # even branch
-#                 next_number1 = sequence[-1]*2
-#                 sequence1 = sequence + [next_number1]
-#                 next_level_sequences.append(sequence1)
-#                 sequences.append(sequence1)
-#                 start_number_lengths[sequence1[-1]] = max(start_number_lengths.get(sequence1[-1],0), len(sequence1))
-#                 if sequence1[-1] > 1e6:
-#                     raise StopIteration
-
-#                 # uneven branch
-#                 next_number2 = (sequence[-1] - 1) / 3
-#                 if (int(next_number2) == next_number2) and next_number2 not in [0,1] :
-#                     sequence2 = sequence + [int(next_number2)]
-#                     next_level_sequences.append(sequence2)
-#                     sequences.append(sequence2)
-#                     start_number_lengths[sequence2[-1]] = max(start_number_lengths.get(sequence2[-1],0), len(sequence2))
-
-#                     if sequence2[-1] > 1e6:
-#                         raise StopIteration
-
-                
-#             current_level_sequences = next_level_sequences
-#     except StopIteration:
-#         for sequence in sequences:
-#             print(sequence)
-        
-#         print("-------")
-#         print(start_number_lengths)
-#         longest_length = 0
-#         start_number_longest = -1
-#         for (start_number, length) in start_number_lengths.items():
-#             if length > longest_length:
-#                 longest_length = length
-#                 start_number_longest = start_number
+    print("LONGEST", longest_i, max_len)
