@@ -39,6 +39,7 @@ Problem Nr | Invocation for solution                   | Solution
 14         | `python runner.py 14`                     | 837799
 15         | `python runner.py 15`                     | 137846528820
 16         | `python runner.py 16`                     | Not Finished
+18         | `python runner.py 18`                     | 1074
 19         | `python runner.py 19`                     | 171
 20         | `python problem20/solution.py 100`        | 648
 
