@@ -1,16 +1,16 @@
+########################################################################################################################
+# Problem 4: Largest palindrome product
+########################################################################################################################
 # A palindromic number reads the same both ways. The largest palindrome made 
 # from the product of two 2-digit numbers is 9009 = 91 x 99.
 # Find the largest palindrome made from the product of two 3-digit numbers.
+########################################################################################################################
+# NOTES
+#
+########################################################################################################################
 
 import sys
 
-def print_usage():
-    print("usage: python %s <range-end>" % sys.argv[0])
-
-def assert_correct_input():
-    if len(sys.argv) != 2:
-        print_usage()
-        quit(1)
 
 def is_palindrome(num):
     """ Checks whether a given number is a palindrome"""
@@ -26,11 +26,9 @@ def is_palindrome(num):
     return True
 
 
-if __name__ == "__main__":
+def run(args):
         
     three_digit_numbers = range(100, 1000)
-    #print "Three digit numbers"
-    #print three_digit_numbers
 
     max_palindrome = 0
     for i in three_digit_numbers:

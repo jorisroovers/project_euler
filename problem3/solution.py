@@ -1,7 +1,12 @@
+########################################################################################################################
+# Problem 3: Largest prime factor
+########################################################################################################################
 # The prime factors of 13195 are 5, 7, 13 and 29.
 # What is the largest prime factor of the number 600851475143 ?
-# Solution: 6857
-import sys
+########################################################################################################################
+# NOTES
+# - Need to revisit this problem, the current solution is just a brute-force that takes a long time to complete.
+########################################################################################################################
 
 def print_usage(args):
     print("usage: python %s <number>" % args[0])
@@ -52,6 +57,3 @@ def run(args):
 
     print("Solution:", largest_prime_factor)
 
-
-if  __name__ == "__main__":
-    run(sys.argv)

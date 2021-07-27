@@ -25,16 +25,17 @@ Problem Nr | Invocation for solution                   | Solution
 -----------|-------------------------------------------|-----------
 1          | `python runner.py 1 1000`                 | 233168
 2          | `python runner.py 2 4000000`              | 4613732
-3          | `python runner.py 3`                      | 6857
-4          | `python problem4/solution.py`             | 906609
-5          | `python problem5/solution.py 20`          | 232792560
-6          | `python problem6/solution.py`             | 25164150 
+3*         | `python runner.py 3 600851475143`         | 6857
+4          | `python runner.py 4`                      | 906609
+5          | `python runner.py 5 20`                   | 232792560
+6          | `python runner.py 6`                      | 25164150 
 7          | `python runner.py 7 10001`                | 142913828922
 8          | `python runner.py 8 13`                   | 23514624000
 9          | `python runner.py 9`                      | 31875000
 10         | `python runner.py 10 2000000`             | 142913828922
 11         | `python runner.py 11 problem11/input.txt` | 104743
 12         | `python runner.py 12`                     | 76576500
+13         | `python runner.py 13`                     | 5537376230
 14         | `python runner.py 14`                     | 837799
 15         | `python runner.py 15`                     | 137846528820
 16         | `python runner.py 16`                     | Not Finished

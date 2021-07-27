@@ -1,7 +1,16 @@
+########################################################################################################################
+# Problem 8: Largest product in a series
+########################################################################################################################
 # The four adjacent digits in the 1000-digit number that have the greatest 
 # product are 9 x 9 x 8 x 9 = 5832. Find the thirteen adjacent digits in the 
 # 1000-digit number (see input.txt) that have the greatest product. 
 # What is the value of this product?
+########################################################################################################################
+# NOTES
+#
+########################################################################################################################
+
+
 import sys
 import os
 
@@ -33,8 +42,3 @@ def run(args):
 
         window_product_str = "x".join([ch for ch in largest_window])
         print("Solution: %i (%s)" % (largest_product, window_product_str))
-
-
-if __name__ == "__main__":
-    run(sys.argv)
-

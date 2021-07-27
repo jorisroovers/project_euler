@@ -1,18 +1,19 @@
 
+########################################################################################################################
 # Problem 13: Large sum
+########################################################################################################################
 # Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
 # <See input.txt>
+########################################################################################################################
+# NOTES
+#
+########################################################################################################################
 
-def assert_input(args):
-    if len(args) != 2:
-        msg = "Required Arguments\n"
-        msg += "\t inputfile"
-        quit(msg)
+import os
 
 def run(args):
-    assert_input(args)
-    input_file = args[1]
-    
+    input_file = os.path.join(os.path.dirname(__file__), "input.txt")
+
     with open(input_file, 'r') as f:
         contents = f.readlines()
         total = 0
