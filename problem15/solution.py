@@ -32,7 +32,7 @@ def combination(p, q):
     return fac(q)/(fac(q-p)*fac(p))
 
 
-if __name__ == "__main__":
+def run(args):
 # The main insight for the solution to this problem is that each path that 
 # reaches the bottom right corner has the following properties
 # for grid size 2: [ 'D', 'R', 'D', 'R']
@@ -50,12 +50,12 @@ if __name__ == "__main__":
 # basic combinatorial: choose n out of n*2 -> C(n, n*2)
 # From math, we know that C(p, q) -> q!/(q-p)!p!
 
-    grid_size = int(sys.argv[1])
+    grid_size = int(args[1])
 
-    for grid_size in xrange(1, grid_size+1):
+    for grid_size in range(1, grid_size+1):
         paths = []
         #num_paths = follow_paths(0, 0,[], paths, grid_size)
         combinations = combination(grid_size, grid_size * 2)
-        print "Size %i, Solution: %i" % (grid_size, combinations)
+        print("Size %i, Solution: %i" % (grid_size, combinations))
         #print paths
 

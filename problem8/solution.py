@@ -3,15 +3,20 @@
 # 1000-digit number (see input.txt) that have the greatest product. 
 # What is the value of this product?
 import sys
+import os
+
+from functools import reduce
 
 def run(args):
-    with open('input.txt', 'r') as f:
+    # input.txt sits next to solution.py, get absolute path
+    input_file = os.path.join(os.path.dirname(__file__), "input.txt")
+    with open(input_file, 'r') as f:
         contents = f.readlines()
         # input file as single str
         number_str = "".join(contents).replace("\n", "")
-        print "Number"
-        print number_str
-        print "-"*50
+        print("Number")
+        print(number_str)
+        print("-"*50)
         i = 0
         window_size = int(args[1])
         last_window_start_index = len(number_str) - window_size
@@ -27,7 +32,7 @@ def run(args):
             i += 1
 
         window_product_str = "x".join([ch for ch in largest_window])
-        print "Solution: %i (%s)" % (largest_product, window_product_str)
+        print("Solution: %i (%s)" % (largest_product, window_product_str))
 
 
 if __name__ == "__main__":
