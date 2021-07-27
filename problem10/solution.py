@@ -1,9 +1,13 @@
+########################################################################################################################
 # Problem 10: Summation of primes
+########################################################################################################################
 # The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 # Find the sum of all the primes below two million.
+########################################################################################################################
+# NOTES
+# - Not very elegant: Just a for loop around a prime generator and then sum up the results...
+########################################################################################################################
 
-# SOLUTION (Joris)
-# Not very elegant: Just a for loop around a prime generator and then sum up the results...
 
 from common.util import generate_primes
 

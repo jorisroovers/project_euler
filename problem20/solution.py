@@ -21,5 +21,3 @@ for ch in str(factorial):
     sum += int(ch)
     
 print("digit sum of '%d'= %d" % (factorial, sum))
-
-

@@ -41,9 +41,10 @@
 #   recursively/iteratively towards the top, each node will contain the maximum sum that can be found in subtree for
 #   which that node is the root. Note: you store this max_sum_subtree in the node, but you also keep the original value,
 #   so each node becomes a tuple: (original value, max_sum_subtree).
-# - To then find the path that contains the maximum sum, you just need to iterate the tree again but top-down and
+# - At this point, the maximum sum is stored in the tree root. That's the solution to this problem.
+# - If you want to findthe path that contains the maximum sum, you just need to iterate the tree again but top-down and
 #   follow the child that contains the largest max_sum_subtree. By summing the value of each node along the way, you'll
-#   find the total maximum sum.
+#   then also find the total maximum sum.
 # - A more programatic part of this problem is determining the indices of child nodes in the 1D array containing all
 #   data, given the index of the parent node.
 #   For binary trees, you can easily solve this using a formula that only requires the parent index, but for
@@ -112,7 +113,10 @@ class Tree:
 
 def run(args):
 
-    input_file = os.path.join(os.path.dirname(__file__), "input.txt")
+    if len(args) == 2:
+        input_file = args[1]
+    else:
+        input_file = os.path.join(os.path.dirname(__file__), "input.txt")
 
     numbers = []
     with open(input_file, 'r') as f:
@@ -132,7 +136,11 @@ def run(args):
             c1_sum = el.val + el.c1.max_sum_subtree
             c2_sum = el.val + el.c2.max_sum_subtree
             el.max_sum_subtree = max(c1_sum, c2_sum)
-        
+
+
+    print("MAX SUM", tree.get(0).max_sum_subtree)
+    
+    print("Sanity check by traversing down the tree again:")
     # Traverse the tree top-down, following the largest max_sum_subtree
     max_sum = 0
     node = tree.get(0)

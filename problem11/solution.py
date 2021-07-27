@@ -1,5 +1,6 @@
+########################################################################################################################
 # Problem 11: Largest product in a grid
-#
+########################################################################################################################
 # In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
 # 
 # 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
@@ -24,19 +25,17 @@
 # 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
 # 
 # The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
-# 
-# What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in
-# the 20×20 grid?
-# 
-
-# SOLUTION Joris:
+# What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally)
+# in the 20×20 grid?
+########################################################################################################################
+# NOTES
 # 1. Read entire table as a single array
 # 2. Use of sliding window over each element in the array, and determine the 4 items to left, right, top, down, and
 #    both diagonals.
 # 3. Note that by considering every element subsequently, you will cover each scenario, i.e. one elements top left
 #    diagonal is the same as a previous element's bottom right diagonal
 # 4. Set some limits in place to consider to not consider elements that fall outside of the array
-
+######################################################################################################################### 
 
 DEBUG = False
 

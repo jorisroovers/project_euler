@@ -15,6 +15,8 @@ if __name__ == "__main__":
 
     # Dynamically import the selected problem package
     problem_nr = sys.argv[1]
+    if int(problem_nr) < 10 and problem_nr[0] != "0":
+        problem_nr = "0" + problem_nr
     problem_package_name =  "problem" + problem_nr
     if not os.path.exists(problem_package_name):
         quit("No such package: '%s'" % problem_package_name)
