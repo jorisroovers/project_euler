@@ -1,7 +1,30 @@
+########################################################################################################################
+# Problem 15: Lattice paths
+########################################################################################################################
+
 # Starting in the top left corner of a 2×2 grid, and only being able to 
 # move to the right and down, there are exactly 6 routes 
 # to the bottom right corner.
-import sys
+
+########################################################################################################################
+# NOTES
+# The main insight for the solution to this problem is that each path that 
+# reaches the bottom right corner has the following properties
+# for grid size 2: [ 'D', 'R', 'D', 'R']
+#   -> the length of each valid path is 4
+#   -> in each path, there are 2 'D' movements, and 2 'R' movements
+# for grid size n:
+#   -> the length of each valid path is n*2
+#   -> in each path, there are n 'D' movements, and n 'R' movements
+# 
+# So, what we are really looking for is what number of arrays of length n*2
+# contain n 'D's and n 'R's.
+# To generate a single such array, we randomly pick n positions for 'D' in 
+# that array, and fill the positions that are not chosen with by 'R'.
+# To determine how many such arrays we can generate, we fall back to a 
+# basic combinatorial: choose n out of n*2 -> C(n, n*2)
+# From math, we know that C(p, q) -> q!/(q-p)!p!
+########################################################################################################################
 
 def follow_paths(x, y, current_path, paths, grid_size):
     path_count = 0
@@ -33,22 +56,6 @@ def combination(p, q):
 
 
 def run(args):
-# The main insight for the solution to this problem is that each path that 
-# reaches the bottom right corner has the following properties
-# for grid size 2: [ 'D', 'R', 'D', 'R']
-#   -> the length of each valid path is 4
-#   -> in each path, there are 2 'D' movements, and 2 'R' movements
-# for grid size n:
-#   -> the length of each valid path is n*2
-#   -> in each path, there are n 'D' movements, and n 'R' movements
-# 
-# So, what we are really looking for is what number of arrays of length n*2
-# contain n 'D's and n 'R's.
-# To generate a single such array, we randomly pick n positions for 'D' in 
-# that array, and fill the positions that are not chosen with by 'R'.
-# To determine how many such arrays we can generate, we fall back to a 
-# basic combinatorial: choose n out of n*2 -> C(n, n*2)
-# From math, we know that C(p, q) -> q!/(q-p)!p!
 
     grid_size = int(args[1])
 

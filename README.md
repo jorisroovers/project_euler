@@ -32,17 +32,17 @@ Problem Nr | Invocation for solution                                  | Solution
 12         | `python runner.py 12`                                    | 76576500
 13         | `python runner.py 13`                                    | 5537376230
 14         | `python runner.py 14`                                    | 837799
-15         | `python runner.py 15`                                    | 137846528820
+15         | `python runner.py 15 20`                                 | 137846528820
 16         | `python runner.py 16`                                    | Not Finished
 18         | `python runner.py 18`                                    | 1074
 19         | `python runner.py 19`                                    | 171
-20         | `python problem20/solution.py 100`                       | 648
+20         | `python runner.py 20 100`                                | 648
 22         | `python runner.py 22`                                    | 871198282
 67         | `python runner.py 18 problem67/p067_triangle.txt`        | 1074
 
 # TODO
 Some TODO items not related to the problems themselves, but to code cleanup/refactoring.
 
-- Convert all problems to run using `runner.py` in python 3
-- Add problem description to each problem in same formatting
 - Add debug option to `runner.py` and debug logging
+- Add default input options for run, so that you *can* run it without specifying the params
+ (maybe create custom decorator for run to make this easy?)
