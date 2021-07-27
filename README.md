@@ -37,6 +37,7 @@ Problem Nr | Invocation for solution                                  | Solution
 18         | `python runner.py 18`                                    | 1074
 19         | `python runner.py 19`                                    | 171
 20         | `python problem20/solution.py 100`                       | 648
+22         | `python runner.py 22`                                    | 871198282
 67         | `python runner.py 18 problem67/p067_triangle.txt`        | 1074
 
 # TODO
