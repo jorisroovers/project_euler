@@ -38,13 +38,13 @@ Problem Nr | Invocation for solution                   | Solution
 14         | `python runner.py 14`                     | 837799
 15         | `python runner.py 15`                     | 137846528820
 16         | `python runner.py 16`                     | Not Finished
-19         | `python runner.py 19`                     | Not Finished
+19         | `python runner.py 19`                     | 171
 20         | `python problem20/solution.py 100`        | 648
 
 
 # TODO
 Some TODO items not related to the problems themselves, but to code cleanup/refactoring.
 
+- Convert all problems to run using `runner.py` in python 3
 - Add problem description to each problem in same formatting
 - Add debug option to `runner.py` and debug logging
-- 

@@ -1,6 +1,5 @@
 import sys
 import os
-import problem1
 
 def print_usage():
     print("%s <problem nr> <param>*" % sys.argv[0])
@@ -12,6 +11,7 @@ def assert_usage():
 
 if __name__ == "__main__":
     assert_usage()
+
 
     # Dynamically import the selected problem package
     problem_nr = sys.argv[1]
