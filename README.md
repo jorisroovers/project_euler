@@ -33,7 +33,7 @@ Problem Nr | Invocation for solution                                  | Solution
 13         | `python runner.py 13`                                    | 5537376230
 14         | `python runner.py 14`                                    | 837799
 15         | `python runner.py 15 20`                                 | 137846528820
-16         | `python runner.py 16`                                    | Need to redo, code lost
+16         | `python runner.py 16`                                    | 1366
 17         | `python runner.py 17`                                    | 21124
 18         | `python runner.py 18`                                    | 1074
 19         | `python runner.py 19`                                    | 171
