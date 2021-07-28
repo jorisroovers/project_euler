@@ -41,6 +41,7 @@ Problem Nr | Invocation for solution                                  | Solution
 22         | `python runner.py 22`                                    | 871198282
 24         | `python runner.py 24`                                    | 2783915460
 25         | `python runner.py 25`                                    | 4782
+32         | `python runner.py 32`                                    | 45228
 67         | `python runner.py 18 problem67/p067_triangle.txt`        | 1074
 
 # TODO
