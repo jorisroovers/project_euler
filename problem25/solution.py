@@ -28,15 +28,15 @@
 # 
 ########################################################################################################################
 
-from common.util import xfib
+from common.util import xfib, LOG
 
 def run(args):
 
     i = 1
     for fi in xfib():
         fi_str_len = len(str(fi))
+        LOG.debug(f"F_{i}={fi} ({fi_str_len})")
         if fi_str_len == 1000:
-             print(f"F_{i}={fi} ({fi_str_len})")
              print(f"SOLUTION: {i}")
              break
         i += 1

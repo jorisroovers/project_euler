@@ -1,20 +1,30 @@
+import argparse
 import sys
+from common.util import LOG
+import logging
 import os
 
 def print_usage():
     print("%s <problem nr> <param>*" % sys.argv[0])
 
-def assert_usage():
-    if len(sys.argv) < 2:
-        print_usage()
-        quit()
 
 if __name__ == "__main__":
-    assert_usage()
 
+
+    parser = argparse.ArgumentParser(description='Run the solution to an Euler Project problem')
+    parser.add_argument('--debug', action='store_true', default=False, help='Print debug output')
+    parser.add_argument('problem', type=int, help='Problem number to run')
+    parser.add_argument('program args', nargs='*', help='Problem specific args')
+
+
+    args = parser.parse_args()
+
+    # Enable debugging
+    if args.debug:
+        LOG.setLevel(logging.DEBUG)
 
     # Dynamically import the selected problem package
-    problem_nr = sys.argv[1]
+    problem_nr = str(args.problem)
     if int(problem_nr) < 10 and problem_nr[0] != "0":
         problem_nr = "0" + problem_nr
     problem_package_name =  "problem" + problem_nr

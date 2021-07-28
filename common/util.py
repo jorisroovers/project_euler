@@ -1,3 +1,11 @@
+import logging
+
+logging.basicConfig()
+LOG = logging.getLogger('euler')
+
+########################################################################################################################
+# Utility functions
+
 def is_prime(number):
     """ Checks whether a number is a prime number """
     if number == 1 or number == 2:
@@ -34,3 +42,16 @@ def xfib():
         tmp = f2
         f2 = f1 + f2
         f1 = tmp
+
+def is_palindrome(num):
+    """ Checks whether a given number is a palindrome"""
+    # iterate over first half of the string, find corresponding
+    # letter in second half of the string and check if they are the same.
+    num_str = str(num)
+    num_str_len = len(num_str)
+    for left_i in range(0, int(num_str_len/2)):
+        right_i = (num_str_len - 1) - left_i
+        # print left_i, "==", right_i
+        if num_str[left_i] != num_str[right_i]:
+            return False
+    return True

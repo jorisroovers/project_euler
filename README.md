@@ -44,6 +44,4 @@ Problem Nr | Invocation for solution                                  | Solution
 # TODO
 Some TODO items not related to the problems themselves, but to code cleanup/refactoring.
 
-- Add debug option to `runner.py` and debug logging
-- Add default input options for run, so that you *can* run it without specifying the params
- (maybe create custom decorator for run to make this easy?)
+- Add default input options for run, so that you *can* run it without specifying the params: `DEFAULT_ARGS` module var?
