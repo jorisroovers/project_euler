@@ -25,3 +25,12 @@ def generate_primes():
             yield i
         i += 1
 
+def xfib():
+    """ Infinite generator for Fibonacci numbers"""
+    f1 = 1
+    f2 = 1
+    while True:
+        yield f1
+        tmp = f2
+        f2 = f1 + f2
+        f1 = tmp

@@ -13,6 +13,7 @@
 ########################################################################################################################
 
 from functools import reduce
+from common.util import xfib
 
 def print_usage(args):
     print("usage: python %s <range-end>" %  args[0])
@@ -21,16 +22,6 @@ def assert_correct_input(args):
     if len(args) != 2:
         print_usage()
         quit(1)
-
-def xfib():
-    """ Infinite generator for Fibonacci numbers"""
-    f1 = 1
-    f2 = 2
-    while True:
-        yield f1
-        tmp = f2
-        f2 = f1 + f2
-        f1 = tmp
 
 def run(args):
 
@@ -45,7 +36,7 @@ def run(args):
         if (f % 2 == 0):
             even_fibs.append(f)
 
-    print("Even Fibonacci numbers, smaller then %d:")
+    print(f"Even Fibonacci numbers, smaller then {end}:")
     print(even_fibs)
 
     # obviously, we can do this more efficient by adding them up in the loop
