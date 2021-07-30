@@ -2,7 +2,9 @@
 An attempt to solve the [Project Euler](http://projecteuler.net/) challenges. 
 
 I do this purely for fun. My goal is mostly to solve the problem in reasonable compute time, not necessarily to come up
-with the most elegant solution.
+with the most elegant solution. In fact, I'm always blown away when reading others' solutions afterwards and how they
+were able to use some elegant formula or mathematical approach where my solution is usually a more programmatic
+"intelligent" brute-force.
 
 Code for each problem is located in the according directory (package) in a `solution.py` module.
 
@@ -41,6 +43,7 @@ Problem Nr | Invocation for solution                                  | Solution
 22         | `python runner.py 22`                                    | 871198282
 24         | `python runner.py 24`                                    | 2783915460
 25         | `python runner.py 25`                                    | 4782
+26         | `python runner.py 26`                                    | 983
 32         | `python runner.py 32`                                    | 45228
 67         | `python runner.py 18 problem67/p067_triangle.txt`        | 1074
 
