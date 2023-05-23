@@ -40,6 +40,7 @@ Problem Nr | Invocation for solution                                  | Solution
 18         | `python runner.py 18`                                    | 1074
 19         | `python runner.py 19`                                    | 171
 20         | `python runner.py 20 100`                                | 648
+21         | `python runner.py 21`                                    | 31626
 22         | `python runner.py 22`                                    | 871198282
 24         | `python runner.py 24`                                    | 2783915460
 25         | `python runner.py 25`                                    | 4782

@@ -55,3 +55,28 @@ def is_palindrome(num):
         if num_str[left_i] != num_str[right_i]:
             return False
     return True
+
+
+def divisors(num):
+    """ Return a sorted list of divisors for a given number """
+    cur = 1
+    end = num
+    # we use a set to avoid situations where we add the middle 2 divisors twice
+    result = set()
+    while cur <= end:
+        mod = num % cur
+        end = num // cur
+        if mod == 0:
+            result.add(cur)
+            result.add(end)
+        cur += 1
+
+    return sorted(result)
+
+def proper_divisors(num):
+    """ Return a sorted list of proper divisors
+    A proper divisor of a number is any divisor of that number other than the number itself """
+    result = divisors(num) # using `pop()` is more efficient (O(1)) that using slicing `[:-1]` (O(n))
+    if len(result) > 0:
+        result.pop()
+    return result

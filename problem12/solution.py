@@ -13,20 +13,7 @@
 # - Not very elegant: Just a for loop around a prime generator and then sum up the results...
 ########################################################################################################################
 
-def divisors(num):
-    cur = 1
-    end = num
-    # we use a set to avoid situations where we add the middle 2 divisors twice
-    divisors = set()
-    while cur <= end:
-        mod = num % cur
-        end = num / cur
-        if mod == 0:
-            divisors.add(cur)
-            divisors.add(end)
-        cur += 1
-
-    return sorted(divisors)
+from common.util import divisors
 
 def triangle_number(n):
     # This formula is quite well-known -> makes the problem easier!
